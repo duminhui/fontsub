@@ -1,7 +1,5 @@
 #-*- coding:utf-8 -*-
-import web
-import json
-from fontTools import subset
+
 from bae.core.wsgi import WSGIApplication
 
 # def app(environ, start_response):
@@ -19,10 +17,10 @@ urls = (
 app = web.application(urls, globals()).wsgifunc()
 
 class generate:        
-    #def GET(self, name):
-        #if not name: 
-        #    name = 'World'
-    #    return 'Hello, ' + name + '!'
+	import web
+	import json
+	from fontTools import subset
+
 	def POST(self, name):
 		data = json.loads(web.data())
 		#bucket = Bucket('font')
@@ -31,9 +29,9 @@ class generate:
 		data = "--text=我们"
 		arg = [name,data]
 		subset.main(arg)
-		return bucket.generate_url('test.zip')
+		#return bucket.generate_url('test.zip')
 		
-		#return data["text"]
+		return data["text"]
 
 
 application = WSGIApplication(app)
