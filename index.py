@@ -17,7 +17,7 @@ urls = (
 
 
 class generate:        
-	import web
+	import web.py
 	import json
 	from fontTools import subset
 
