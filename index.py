@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*-
 
-
+import web
+import json
 
 # def app(environ, start_response):
 #    status = '200 OK'
@@ -10,15 +11,13 @@
 #    return body
 
 
-
 urls = (
     '/(.*)', 'generate'
 )
 
 
 class generate:        
-	import web
-	import json
+
 	from fontTools import subset
 
 	def POST(self, name):
