@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 
-from bae.core.wsgi import WSGIApplication
+
 
 # def app(environ, start_response):
 #    status = '200 OK'
@@ -14,7 +14,7 @@ from bae.core.wsgi import WSGIApplication
 urls = (
     '/(.*)', 'generate'
 )
-app = web.application(urls, globals()).wsgifunc()
+
 
 class generate:        
 	import web
@@ -33,5 +33,6 @@ class generate:
 		
 		return data["text"]
 
-
+from bae.core.wsgi import WSGIApplication
+app = web.application(urls, globals()).wsgifunc()
 application = WSGIApplication(app)
