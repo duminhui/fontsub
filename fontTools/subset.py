@@ -2220,7 +2220,7 @@ def main(args):
   subsetter.populate(glyphs=glyphs, unicodes=unicodes, text=text)
   subsetter.subset(font)
 
-  outfile = bae.core.const.APP_TMPDIR + fontfile + '_after.ttf'
+  outfile = "/tmp/" + fontfile + '.subset'
 
   save_font(font, outfile, options)
   log.lapse("compile and save font")
