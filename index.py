@@ -29,7 +29,7 @@ class generate:
 			try:
 				f = open(outputFile, "rb")
 				webpy.header('Content-Type','application/octet-stream')
-				webpy.header('Content-disposition','attachment; filename=%s.dat' % file_name)
+				webpy.header('Content-disposition','attachment; filename=%s.dat' % outputFile)
 				while True:
 					c = f.read(BUF_SIZE)
 					if c:
@@ -37,8 +37,8 @@ class generate:
 					else:
 						break
 			except Exception, e:
-				print e
-				yield 'Error when read font file'
+				yield e
+				#yield 'Error when read font file'
 			finally:
 				if f:
 					f.close()
