@@ -5,23 +5,18 @@ import json
 import sys
 #from fontTools import subset
 
-# def app(environ, start_response):
-#    status = '200 OK'
-#    headers = [('Content-type', 'text/html')]
-#    start_response(status, headers)
-#    body=["Welcome to Baidu Cloud!\n"]
-#    return body
-
-
 urls = (
     '/(.*)', 'generate'
 )
 
+app_root = os.path.dirname(_file_)
+templates_root = os.path.join(app_root, 'templates')
+render = web.template.render(templates_root)
 
 class generate:        
 	def POST(self, name):
 		data = json.loads(web.data())
-		name = "/s/font/fangzheng.TTF"
+		name = "fangzheng.TTF"
 		data = "--text=我们"
 		arg = [name,data]
 		fontTools.subset.main(arg)
