@@ -2,6 +2,8 @@
 
 import web
 import json
+import sys
+#from fontTools import subset
 
 # def app(environ, start_response):
 #    status = '200 OK'
@@ -17,21 +19,16 @@ urls = (
 
 
 class generate:        
-
-	from fontTools import subset
-
 	def POST(self, name):
 		data = json.loads(web.data())
-		#bucket = Bucket('font')
-		#return bucket.get_object_contents('test.zip')
 		name = "/s/font/fangzheng.TTF"
 		data = "--text=我们"
 		arg = [name,data]
-		subset.main(arg)
-		#return bucket.generate_url('test.zip')
+		fontTools.subset.main(arg)
 		
 		return data["text"]
 
-from bae.core.wsgi import WSGIApplication
 app = web.application(urls, globals()).wsgifunc()
+
+from bae.core.wsgi import WSGIApplication
 application = WSGIApplication(app)
