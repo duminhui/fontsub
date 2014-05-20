@@ -23,8 +23,12 @@ class generate:
 		data = "--text=我们"
 		arg = [name,data]
 		#fontTools.subset.main(arg)
+		outfile = "/tmp/" + name + '_after.ttf'
 		subset.main(arg)
-		return "success"
+		if os.path.isfile(outfile)
+			return "success"
+		else
+			return "fail"
 		
 		#return data["text"]
 
