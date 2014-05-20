@@ -10,9 +10,9 @@ urls = (
     '/(.*)', 'generate'
 )
 
-app_root = os.path.dirname(_file_)
-templates_root = os.path.join(app_root, 'templates')
-render = web.template.render(templates_root)
+#app_root = os.path.dirname(_file_)
+#templates_root = os.path.join(app_root, 'templates')
+#render = web.template.render(templates_root)
 
 class generate:        
 	def POST(self, name):
