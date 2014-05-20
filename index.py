@@ -11,6 +11,8 @@ urls = (
     '/(.*)', 'generate'
 )
 
+BUF_SIZE = 262144
+
 #app_root = os.path.dirname(_file_)
 #sys.path.insert(0, app_root)
 #templates_root = os.path.join(app_root, 'templates')
