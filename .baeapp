@@ -1,0 +1,13 @@
+alias: []
+appid: appidcczbe78uga
+appname: fontsub
+cdatetime: '1400506568'
+createtype: web
+domain: fontsub.duapp.com
+inum: '1'
+lang_type: python
+name: fontsub
+release_revision: 237b01e79067093dd6c0a25dc7979928e65d4d5d
+repos_url: https://git.duapp.com/appidcczbe78uga
+status: '4'
+version_type: git
