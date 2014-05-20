@@ -11,8 +11,8 @@ urls = (
     '/(.*)', 'generate'
 )
 
-app_root = os.path.dirname(_file_)
-sys.path.insert(0, app_root)
+#app_root = os.path.dirname(_file_)
+#sys.path.insert(0, app_root)
 #templates_root = os.path.join(app_root, 'templates')
 #render = web.template.render(templates_root)
 
