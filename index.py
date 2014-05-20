@@ -25,9 +25,9 @@ class generate:
 		#fontTools.subset.main(arg)
 		subset.main(arg)
 		outputFile = "/tmp/" + name + ".subset"
-		if os.path.isfile(outputFile)
+		if os.path.isfile(outputFile):
 			return "success"
-		else
+		else:
 			return "fail"
 		
 		#return data["text"]
