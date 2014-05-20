@@ -1,9 +1,10 @@
 #-*- coding:utf-8 -*-
 
 import web
+from bae.core.wsgi import WSGIApplication
 import json
 import sys
-#from fontTools import subset
+from fontTools import subset
 
 urls = (
     '/(.*)', 'generate'
@@ -19,11 +20,11 @@ class generate:
 		name = "fangzheng.TTF"
 		data = "--text=我们"
 		arg = [name,data]
-		fontTools.subset.main(arg)
+		#fontTools.subset.main(arg)
+		subset.main(arg)
 		
 		return data["text"]
 
 app = web.application(urls, globals()).wsgifunc()
 
-from bae.core.wsgi import WSGIApplication
 application = WSGIApplication(app)
