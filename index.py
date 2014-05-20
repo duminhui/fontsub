@@ -26,7 +26,23 @@ class generate:
 		subset.main(arg)
 		outputFile = "/tmp/" + name + ".subset"
 		if (os.path.isfile(outputFile)):
-			return "success"
+			try:
+				f = open(outputFile, "rb")
+				webpy.header('Content-Type','application/octet-stream')
+				webpy.header('Content-disposition','attachment; filename=%s.dat' % file_name)
+				while True:
+					c = f.read(BUF_SIZE)
+					if c:
+						yield c
+					else:
+						break
+			except Exception, e:
+				print e
+				yield 'Error when read font file'
+			finally:
+				if f:
+					f.close()
+			#return "success"
 		else:
 			return "fail"
 		
