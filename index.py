@@ -43,8 +43,8 @@ class generate:
 				if f:
 					f.close()
 			#return "success"
-		else:
-			return "fail"
+		#else:
+			#return "fail"
 		
 		#return data["text"]
 
