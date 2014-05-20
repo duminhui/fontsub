@@ -15,6 +15,7 @@ urls = (
 #sys.path.insert(0, app_root)
 #templates_root = os.path.join(app_root, 'templates')
 #render = web.template.render(templates_root)
+app = web.application(urls, globals()).wsgifunc()
 
 class generate:        
 	def POST(self, name):
@@ -28,8 +29,8 @@ class generate:
 		if (os.path.isfile(outputFile)):
 			try:
 				f = open(outputFile, "rb")
-				webpy.header('Content-Type','application/octet-stream')
-				webpy.header('Content-disposition','attachment; filename=%s.dat' % outputFile)
+				web.header('Content-Type','application/octet-stream')
+				web.header('Content-disposition','attachment; filename=%s.dat' % outputFile)
 				while True:
 					c = f.read(BUF_SIZE)
 					if c:
@@ -48,6 +49,5 @@ class generate:
 		
 		#return data["text"]
 
-app = web.application(urls, globals()).wsgifunc()
 
 application = WSGIApplication(app)
