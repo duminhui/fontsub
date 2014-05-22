@@ -20,7 +20,7 @@ BUF_SIZE = 262144
 app = web.application(urls, globals()).wsgifunc()
 
 class generate:        
-	def POST(self, name):
+	def GET(self, name):
 		data = json.loads(web.data())
 		name = "fangzheng.TTF"
 		data = "--text=我们"
@@ -49,7 +49,7 @@ class generate:
 		#else:
 			#return "fail"
 		
-		#return data["text"]
+		return "yes" 
 
 
 application = WSGIApplication(app)
