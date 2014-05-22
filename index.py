@@ -21,7 +21,7 @@ app = web.application(urls, globals()).wsgifunc()
 
 class generate:        
 	def GET(self, name):
-		data = json.loads(web.data())
+		#data = json.loads(web.data())
 		name = "fangzheng.TTF"
 		data = "--text=我们"
 		arg = [name,data]
