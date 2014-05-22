@@ -49,7 +49,7 @@ class generate:
 		#else:
 			#return "fail"
 		
-		return "yes" 
+		#return "yes" 
 
 
 application = WSGIApplication(app)
